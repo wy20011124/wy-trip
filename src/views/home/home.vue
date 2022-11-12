@@ -1,0 +1,49 @@
+<template>
+  <div class="home">
+    <home-nav-bar></home-nav-bar>
+    <div class="banner">
+      <img src="@/assets/image/home/banner.webp" alt="">
+    </div>
+    <div class="location">
+        <div class="city">广州</div>
+        <div class="position">
+          <span class="text">我的位置</span>
+          <img src="@/assets/image/home/icon_location.png" alt="">
+        </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import homeNavBar from './cpns/home-nav-bar.vue';
+</script>
+
+<style lang="less" scoped>
+.banner{
+  img{
+    width: 100%;
+  }
+}
+.location{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  font-size: 12px;
+  .city{
+    flex: 1;
+  }
+  .position{
+    width: 74px;
+    img{
+      width: 18px;
+      height: 18px;
+      margin-left: 5px;
+    }
+   .text{
+    line-height: 18px;
+   }
+  }
+}
+</style>
