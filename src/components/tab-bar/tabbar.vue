@@ -1,9 +1,9 @@
 <template>
   <div class="tab-bar">
-    <van-tabbar v-model="currentIndex" active-color="#ff9854">
-      <template v-for="(item,index) in tabbrData">
+    <van-tabbar v-model="currentIndex" active-color="#ff9854" route>
+      <template v-for="(item, index) in tabbrData">
         <van-tabbar-item :to="item.path">
-          <span>{{item.text}}</span>
+          <span>{{ item.text }}</span>
           <template #icon>
             <img
               v-if="currentIndex !== index"
@@ -32,7 +32,8 @@
 
 <script setup>
 import tabbrData from '../../assets/data/tabbarData';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 // import { useRouter } from 'vue-router';
 const getAssetsURL = (image) => {
   // 参数一 相对路径
@@ -40,6 +41,13 @@ const getAssetsURL = (image) => {
   return new URL(image, import.meta.url).href;
 };
 const currentIndex = ref(0);
+const route = useRoute();
+// 监听路由改变时对应的路径
+watch(route, (newRoute) => {
+  const index = tabbrData.findIndex((index) => index.path === newRoute.path);
+  if(index===-1) return
+  currentIndex.value = index;
+});
 // const router = useRouter();
 // function itemClick(index, item) {
 //   (currentIndex.value = index), router.push(item.path);
@@ -73,8 +81,8 @@ const currentIndex = ref(0);
 //     }
 //   }
 // }
-.tab-bar{
-  img{
+.tab-bar {
+  img {
     height: 27px;
   }
 }

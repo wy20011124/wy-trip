@@ -3,4 +3,10 @@ body{
 }
 :root{
     --primary-color:#ff9854;
+    /*全局修改search的搜索图标颜色 */
+    --van-search-left-icon-color:var(--primary-color) !important;
+    /* 颜色的渐变 */
+    --theme-linear-gradient:linear-gradient(90deg ,#fa8c1d,#fcaf3f);
+    /* 修改vant的主体色 */
+    --van-primary-color:var(--primary-color) !important;
 }
