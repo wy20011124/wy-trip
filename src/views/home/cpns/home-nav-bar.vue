@@ -1,7 +1,7 @@
 <template>
   <div class="home-nav-bar">
     <div class="nav-bar">
-      <div class="title">宏远旅途</div>
+      <div class="title">鹏程旅途</div>
     </div>
   </div>
 </template>

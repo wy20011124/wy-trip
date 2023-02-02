@@ -39,7 +39,7 @@ function cancelClick() {
 }
 // tab
 const tabActive = ref();
-console.log(tabActive)
+// console.log(tabActive)
 // 发送网络请求，获取city数据
 // const allCity=ref({})
 // getCityAll().then((res)=>{
